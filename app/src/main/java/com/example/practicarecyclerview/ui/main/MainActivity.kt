@@ -9,9 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.practicarecyclerview.R
 import com.example.practicarecyclerview.databinding.ActivityMainBinding
-import com.example.practicarecyclerview.models.Person
 import com.example.practicarecyclerview.ui.adapters.PersonAdapter
-import com.example.practicarecyclerview.views.MainViewModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -36,4 +34,5 @@ class MainActivity : AppCompatActivity() {
         binding.lstPeople.adapter = adapter
         binding.lstPeople.layoutManager = LinearLayoutManager(this).apply { orientation = LinearLayoutManager.HORIZONTAL}
     }
+
 }

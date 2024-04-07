@@ -15,7 +15,6 @@ class DetailFragment : Fragment() {
         fun newInstance() = DetailFragment()
     }
 
-    private val viewModel: DetailViewModel by viewModels()
     private lateinit var binding: FragmentDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-package com.example.practicarecyclerview.ui.stories.ui.main
+package com.example.practicarecyclerview.ui.stories
 
 import androidx.lifecycle.ViewModel
 

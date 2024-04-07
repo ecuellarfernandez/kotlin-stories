@@ -2,10 +2,19 @@ package com.example.practicarecyclerview.ui.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.practicarecyclerview.ui.stories.StoriesActivity
 import com.example.practicarecyclerview.ui.stories.StoriesFragment
 
-class PageAdapter(fragment: Fragment, private val storiesList: List<String>) : FragmentStateAdapter(fragment) {
-    class Pager():
-    override fun getItemCount(): Int = storiesList.size
-    override fun createFragment(position: Int): Fragment = StoriesFragment(storiesList[position])
+class PagerAdapter(
+    fragment: StoriesActivity,
+    private val images: ArrayList<String>?
+): FragmentStateAdapter(fragment) {
+
+    override fun getItemCount(): Int {
+        return images?.size ?: 0
+    }
+
+    override fun createFragment(position: Int): Fragment {
+        return StoriesFragment.newInstance(images!![position])
+    }
 }

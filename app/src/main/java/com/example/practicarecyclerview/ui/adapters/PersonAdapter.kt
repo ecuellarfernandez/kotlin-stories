@@ -1,6 +1,7 @@
 package com.example.practicarecyclerview.ui.adapters
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.example.practicarecyclerview.databinding.PersonListItemBinding
 import com.example.practicarecyclerview.models.Person
+import com.example.practicarecyclerview.ui.stories.StoriesActivity
 import java.io.File
 
 class PersonAdapter (
@@ -33,6 +35,13 @@ class PersonViewHolder(private val binding: PersonListItemBinding): RecyclerView
                 .transform(CircleCrop())
                 .placeholder(android.R.drawable.ic_menu_gallery)
                 .into(binding.imgPersonAvatar)
+
+            itemView.setOnClickListener{
+                val intent = Intent(itemView.context, StoriesActivity::class.java)
+                intent.putExtra("stories", person.storiesImg as ArrayList<String>)
+                itemView.context.startActivity(intent)
+            }
+
         }
     }
 
