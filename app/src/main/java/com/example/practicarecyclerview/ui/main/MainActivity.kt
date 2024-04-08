@@ -32,7 +32,8 @@ class MainActivity : AppCompatActivity() {
         // creamos un adapter para el recycler view y le pasamos la lista de personas
         val adapter = PersonAdapter(model.persons)
         binding.lstPeople.adapter = adapter
-        binding.lstPeople.layoutManager = LinearLayoutManager(this).apply { orientation = LinearLayoutManager.HORIZONTAL}
+        binding.lstPeople.layoutManager =
+            LinearLayoutManager(this).apply { orientation = LinearLayoutManager.HORIZONTAL }
     }
 
 }
