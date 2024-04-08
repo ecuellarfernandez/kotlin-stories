@@ -20,7 +20,6 @@ class StoriesFragment() : Fragment() {
         }
     }
 
-    private val viewModel: StoriesViewModel by viewModels()
     private lateinit var binding: FragmentStoriesBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,23 +28,18 @@ class StoriesFragment() : Fragment() {
     }
 
     override fun onCreateView(
-    inflater: LayoutInflater, container: ViewGroup?,
-    savedInstanceState: Bundle?
-): View {
-    binding = FragmentStoriesBinding.inflate(inflater, container, false)
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
+        binding = FragmentStoriesBinding.inflate(inflater, container, false)
 
-    // Recuperar la URL de la imagen de los argumentos del fragmento
-    val imageUrl = arguments?.getString("imageUrl")
+        // Recuperar la URL de la imagen de los argumentos del fragmento
+        val imageUrl = arguments?.getString("imageUrl")
 
-    // Usar Glide para cargar la imagen en un ImageView
-    if (imageUrl != null) {
-        Glide.with(this)
-            .load(imageUrl)
-            .placeholder(android.R.drawable.ic_menu_gallery)
+        // Usar Glide para cargar la imagen en un ImageView
+        Glide.with(this).load(imageUrl).placeholder(android.R.drawable.ic_menu_gallery)
             .into(binding.imageView)
-    }
 
-    return binding.root
-}
+        return binding.root
+    }
 
 }
